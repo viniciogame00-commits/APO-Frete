@@ -33,23 +33,23 @@
 
         <div class="mb-3">
             <label class="form-label">Código</label>
-            <input type="text" name="Codigo" class="form-control">
+            <input type="text" name="codigo" class="form-control">
         </div>
         <div class="mb-3">
-            <label class="form-label">name</label>
-            <input type="text" name="Nome" class="form-control">
+            <label class="form-label">Nome</label>
+            <input type="text" name="nome" class="form-control">
         </div>
         <div class="mb-3">
-            <label class="form-label">peso</label>
-            <input type="number" step="0.01" name="Peso" class="form-control">
+            <label class="form-label">Peso</label>
+            <input type="number" step="0.01" name="peso" class="form-control">
         </div>
         <div class="mb-3">
-            <label class="form-label">medidas</label>
-            <input type="text" name="Medidas" class="form-control">
+            <label class="form-label">Medidas</label>
+            <input type="text" name="medidas" class="form-control">
         </div>
         <div class="mb-3">
-            <label class="form-label">quantidade</label>
-            <input type="number" name="Quantidade" class="form-control">
+            <label class="form-label">Quantidade</label>
+            <input type="number" name="quantidade" class="form-control">
         </div>
             <button type="submit" class="btn text-white" style="background-color: #6155F5;">Salvar</button>
     </form>

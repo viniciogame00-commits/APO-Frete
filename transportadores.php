@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Cadastro de transportador </title>
+    <title>Cadastro de Transportador </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -27,7 +27,7 @@
         </ul>
     </nav>
     <div class="container mt-4" style="max-width: 500px; margin-left: 40px;">
-    <h2>Cadastro de transportador</h2>
+    <h2>Cadastro de Transportador</h2>
 
     <form action="transportadores.php" method="post">
 
