@@ -1,3 +1,20 @@
+<?php
+include "includes/conexao.php";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nome = $_POST["nome"];
+    $peso = $_POST["peso"];
+    $medidas = $_POST["medidas"];
+    $quantidade = $_POST["quantidade"];
+
+    $sql = "INSERT INTO produtos (nome, peso, medidas, quantidade) VALUES (?, ?, ?, ?)";
+    $comando = mysqli_prepare($conexao, $sql);
+    mysqli_stmt_bind_param($comando, "sdsi", $nome, $peso, $medidas, $quantidade);
+    mysqli_stmt_execute($comando);
+
+    $mensagem = "Produto cadastrado com sucesso!";
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -28,13 +45,13 @@
     </nav>
     <div class="container mt-4" style="max-width: 500px; margin-left: 40px;">
     <h2>Cadastro de Produto</h2>
+    
+    <?php if (isset($mensagem)) { ?>
+    <div class="alert alert-success"><?php echo $mensagem; ?></div>
+    <?php } ?>
 
     <form action="produtos.php" method="post">
 
-        <div class="mb-3">
-            <label class="form-label">Código</label>
-            <input type="text" name="codigo" class="form-control">
-        </div>
         <div class="mb-3">
             <label class="form-label">Nome</label>
             <input type="text" name="nome" class="form-control">
