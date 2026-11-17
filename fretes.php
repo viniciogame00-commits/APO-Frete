@@ -1,5 +1,31 @@
 <?php
 include "includes/conexao.php";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $data = $_POST["data"];
+    $transportador = $_POST["transportador"];
+    $origem = $_POST["origem"];
+    $destino = $_POST["destino"];
+    $produtos = $_POST["produtos"];
+
+    $sql = "INSERT INTO fretes (data, transportador, origem, destino) VALUES (?, ?, ?, ?)";
+    $comando = mysqli_prepare($conexao, $sql);
+    mysqli_stmt_bind_param($comando, "siii", $data, $transportador, $origem, $destino);
+    mysqli_stmt_execute($comando);
+
+    $codigo_frete = mysqli_insert_id($conexao);
+
+    foreach ($produtos as $produto) {
+        if ($produto != "") {
+            $sql2 = "INSERT INTO frete_produtos (frete, produto) VALUES (?, ?)";
+            $comando2 = mysqli_prepare($conexao, $sql2);
+            mysqli_stmt_bind_param($comando2, "ii", $codigo_frete, $produto);
+            mysqli_stmt_execute($comando2);
+        }
+    }
+
+    $mensagem = "Frete gerado com sucesso!";
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -34,17 +60,22 @@ include "includes/conexao.php";
 
     <div class="container mt-4" style="max-width: 500px; margin-left: 40px;">
         <h2>Cadastro de Frete</h2>
+            <?php if (isset($mensagem)) { ?>
+    <div class="alert alert-success"><?php echo $mensagem; ?></div>
+    <?php } ?> 
+
+     
 
         <form action="fretes.php" method="post">
 
             <div class="mb-3">
                 <label class="form-label">Data</label>
-                <input type="date" name="data" class="form-control">
+                <input type="date" name="data" class="form-control" required>
             </div>
 
             <div class="mb-3">
                 <label class="form-label">Transportador</label>
-                <select name="transportador" class="form-select">
+                <select name="transportador" class="form-select" required>
                     <option value="">Selecione...</option>
                     <?php
                    $resultado = mysqli_query($conexao, "SELECT * FROM transportadores");
@@ -57,7 +88,7 @@ include "includes/conexao.php";
 
             <div class="mb-3">
                 <label class="form-label">Origem</label>
-                <select name="origem" class="form-select">
+                <select name="origem" class="form-select" required>
                     <option value="">Selecione...</option>
                     <?php
                    $resultado = mysqli_query($conexao, "SELECT * FROM enderecos");
@@ -70,7 +101,7 @@ include "includes/conexao.php";
 
             <div class="mb-3">
                 <label class="form-label">Destino</label>
-                <select name="destino" class="form-select">
+                <select name="destino" class="form-select" required>
                     <option value="">Selecione...</option>
                     <?php
                    $resultado = mysqli_query($conexao, "SELECT * FROM enderecos");
