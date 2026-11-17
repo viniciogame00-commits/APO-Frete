@@ -17,11 +17,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <title>Cadastro de Transportador </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
 
     <nav class="navbar navbar-expand navbar-dark px-4" style="background-color: #6155F5;">
@@ -44,36 +46,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </ul>
     </nav>
     <div class="container mt-4" style="max-width: 500px; margin-left: 40px;">
-    <h2>Cadastro de Transportador</h2>
+        <h2>Cadastro de Transportador</h2>
 
-    <?php if (isset($mensagem)) { ?>
-    <div class="alert alert-success"><?php echo $mensagem; ?></div>
-    <?php } ?>
-
-
-    <form action="transportadores.php" method="post">
+        <?php if (isset($mensagem)) { ?>
+        <div class="alert alert-success"><?php echo $mensagem; ?></div>
+        <?php } ?>
 
 
-        <div class="mb-3">
-            <label class="form-label">Nome</label>
-            <input type="text" name="nome" class="form-control">
-        </div>
-        <div class="mb-3">
-            <label class="form-label">CPF/CNPJ</label>
-            <input type="text" name="cpf_cnpj" class="form-control">
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Telefone</label>
-            <input type="text" name="telefone" class="form-control">
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Cidade</label>
-            <input type="text" name="cidade" class="form-control">
-        </div>
+        <form action="transportadores.php" method="post">
+
+
+            <div class="mb-3">
+                <label class="form-label">Nome</label>
+                <input type="text" name="nome" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">CPF/CNPJ</label>
+                <input type="text" name="cpf_cnpj" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Telefone</label>
+                <input type="text" name="telefone" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Cidade</label>
+                <input type="text" name="cidade" class="form-control">
+            </div>
             <button type="submit" class="btn text-white" style="background-color: #6155F5;">Salvar</button>
-    </form>
+        </form>
 
-</div>
+    </div>
 
 </body>
+
 </html>

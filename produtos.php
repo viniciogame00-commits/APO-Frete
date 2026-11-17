@@ -17,11 +17,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <title>Cadastro de Produto</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
 
     <nav class="navbar navbar-expand navbar-dark px-4" style="background-color: #6155F5;">
@@ -44,34 +46,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </ul>
     </nav>
     <div class="container mt-4" style="max-width: 500px; margin-left: 40px;">
-    <h2>Cadastro de Produto</h2>
-    
-    <?php if (isset($mensagem)) { ?>
-    <div class="alert alert-success"><?php echo $mensagem; ?></div>
-    <?php } ?>
+        <h2>Cadastro de Produto</h2>
 
-    <form action="produtos.php" method="post">
+        <?php if (isset($mensagem)) { ?>
+        <div class="alert alert-success"><?php echo $mensagem; ?></div>
+        <?php } ?>
 
-        <div class="mb-3">
-            <label class="form-label">Nome</label>
-            <input type="text" name="nome" class="form-control">
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Peso</label>
-            <input type="number" step="0.01" name="peso" class="form-control">
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Medidas</label>
-            <input type="text" name="medidas" class="form-control">
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Quantidade</label>
-            <input type="number" name="quantidade" class="form-control">
-        </div>
+        <form action="produtos.php" method="post">
+
+            <div class="mb-3">
+                <label class="form-label">Nome</label>
+                <input type="text" name="nome" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Peso</label>
+                <input type="number" step="0.01" name="peso" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Medidas</label>
+                <input type="text" name="medidas" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Quantidade</label>
+                <input type="number" name="quantidade" class="form-control">
+            </div>
             <button type="submit" class="btn text-white" style="background-color: #6155F5;">Salvar</button>
-    </form>
+        </form>
 
-</div>
+    </div>
 
 </body>
+
 </html>

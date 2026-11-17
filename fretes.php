@@ -60,11 +60,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <div class="container mt-4" style="max-width: 500px; margin-left: 40px;">
         <h2>Cadastro de Frete</h2>
-            <?php if (isset($mensagem)) { ?>
-    <div class="alert alert-success"><?php echo $mensagem; ?></div>
-    <?php } ?> 
+        <?php if (isset($mensagem)) { ?>
+        <div class="alert alert-success"><?php echo $mensagem; ?></div>
+        <?php } ?>
 
-     
+
 
         <form action="fretes.php" method="post">
 

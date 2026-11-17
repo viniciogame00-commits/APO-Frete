@@ -65,31 +65,32 @@ if (isset($_GET["data"]) && $_GET["data"] != "") {
             <input type="date" name="data" class="form-control" style="max-width: 300px;">
             <button type="submit" class="btn text-white" style="background-color: #6155F5;">Buscar</button>
         </form>
-            <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th class="text-white" style="background-color: #6155F5;">Código</th>
-                <th class="text-white" style="background-color: #6155F5;">Data</th>
-                <th class="text-white" style="background-color: #6155F5;">Transportador</th>
-                <th class="text-white" style="background-color: #6155F5;">Origem</th>
-                <th class="text-white" style="background-color: #6155F5;">Destino</th>
-                <th class="text-white" style="background-color: #6155F5;">Produtos</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($fretes as $frete) { ?>
-            <tr>
-                <td><?php echo $frete["codigo"]; ?></td>
-                <td><?php echo date("d/m/Y", strtotime($frete["data"])); ?></td>
-                <td><?php echo $frete["transportador"]; ?></td>
-                <td><?php echo $frete["origem"]; ?></td>
-                <td><?php echo $frete["destino"]; ?></td>
-                <td><?php echo $frete["produtos"]; ?></td>
-            </tr>
-            <?php } ?>
-        </tbody>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th class="text-white" style="background-color: #6155F5;">Código</th>
+                    <th class="text-white" style="background-color: #6155F5;">Data</th>
+                    <th class="text-white" style="background-color: #6155F5;">Transportador</th>
+                    <th class="text-white" style="background-color: #6155F5;">Origem</th>
+                    <th class="text-white" style="background-color: #6155F5;">Destino</th>
+                    <th class="text-white" style="background-color: #6155F5;">Produtos</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($fretes as $frete) { ?>
+                <tr>
+                    <td><?php echo $frete["codigo"]; ?></td>
+                    <td><?php echo date("d/m/Y", strtotime($frete["data"])); ?></td>
+                    <td><?php echo $frete["transportador"]; ?></td>
+                    <td><?php echo $frete["origem"]; ?></td>
+                    <td><?php echo $frete["destino"]; ?></td>
+                    <td><?php echo $frete["produtos"]; ?></td>
+                </tr>
+                <?php } ?>
+            </tbody>
         </table>
-        <button type="button" onclick="window.print()" class="btn text-white" style="background-color: #6155F5;">Baixar relatório</button>
+        <button type="button" onclick="window.print()" class="btn text-white" style="background-color: #6155F5;">Baixar
+            relatório</button>
     </div>
 
 </body>
