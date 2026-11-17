@@ -89,7 +89,7 @@ if (isset($_GET["data"]) && $_GET["data"] != "") {
             <?php } ?>
         </tbody>
         </table>
-        <button type="button" class="btn text-white" style="background-color: #6155F5;">Baixar relatório</button>
+        <button type="button" onclick="window.print()" class="btn text-white" style="background-color: #6155F5;">Baixar relatório</button>
     </div>
 
 </body>
