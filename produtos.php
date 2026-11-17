@@ -22,11 +22,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mensagem = "Produto atualizado com sucesso!";
     }
     mysqli_stmt_execute($comando);
-} elseif (isset($_GET["codigo"])) {
-    $comando = mysqli_prepare($conexao, "SELECT * FROM produtos WHERE codigo = ?");
-    mysqli_stmt_bind_param($comando, "i", $_GET["codigo"]);
-    mysqli_stmt_execute($comando);
-    $produto = mysqli_fetch_assoc(mysqli_stmt_get_result($comando));
+    } elseif (isset($_GET["codigo"])) {
+        $comando = mysqli_prepare($conexao, "SELECT * FROM produtos WHERE codigo = ?");
+        mysqli_stmt_bind_param($comando, "i", $_GET["codigo"]);
+        mysqli_stmt_execute($comando);
+        $produto = mysqli_fetch_assoc(mysqli_stmt_get_result($comando));
 }
 ?>
 <!DOCTYPE html>
