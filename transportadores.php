@@ -104,8 +104,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </thead>
             <tbody>
                 <?php
-$resultado = mysqli_query($conexao, "SELECT * FROM transportadores");
-while ($linha = mysqli_fetch_assoc($resultado)) { ?>
+                $resultado = mysqli_query($conexao, "SELECT * FROM transportadores");
+                while ($linha = mysqli_fetch_assoc($resultado)) { ?>
                 <tr>
                     <td><?php echo $linha["nome"]; ?></td>
                     <td><?php echo $linha["cpf_cnpj"]; ?></td>
