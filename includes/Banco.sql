@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 19/11/2026 às 00:00
+-- Tempo de geração: 20/11/2026 às 23:02
 -- Versão do servidor: 10.11.16-MariaDB
 -- Versão do PHP: 8.4.27
 
@@ -41,7 +41,8 @@ CREATE TABLE `enderecos` (
 --
 
 INSERT INTO `enderecos` (`codigo`, `nome`, `rua`, `cidade`, `cep`, `telefone`) VALUES
-(1, 'Casa do lucas', 'baia formosa 9999999', 'corbelia -PR', '12312332', '4598761234');
+(1, 'Casa do lucas', 'Baia formosa 12', 'Corbelia -PR', '12312332', '4598761234'),
+(2, 'casa do Zaqueu', 'Palmeiras23', 'Três barras - PR', '43211234', '4599809876');
 
 -- --------------------------------------------------------
 
@@ -62,7 +63,9 @@ CREATE TABLE `fretes` (
 --
 
 INSERT INTO `fretes` (`codigo`, `data`, `transportador`, `origem`, `destino`) VALUES
-(3, '2026-11-16', 1, 1, 1);
+(3, '2026-11-16', 1, 1, 1),
+(4, '2026-11-18', 3, 1, 1),
+(5, '2026-11-26', 5, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -80,7 +83,13 @@ CREATE TABLE `frete_produtos` (
 --
 
 INSERT INTO `frete_produtos` (`frete`, `produto`) VALUES
-(3, 1);
+(3, 1),
+(4, 1),
+(4, 2),
+(4, 3),
+(5, 4),
+(5, 1),
+(5, 3);
 
 -- --------------------------------------------------------
 
@@ -102,8 +111,8 @@ CREATE TABLE `produtos` (
 
 INSERT INTO `produtos` (`codigo`, `nome`, `peso`, `medidas`, `quantidade`) VALUES
 (1, 'geladeira azul', 80.00, '70x180cm', 1),
-(2, 'fogão', 40.00, '60x60x90', 1),
-(3, 'Caixa de cerveja teste', 2.00, '20x40x16', 3);
+(2, 'fogão', 40.00, '66x66x66', 1),
+(3, 'Caixa de cerveja', 2.00, '20x40x16', 3);
 
 -- --------------------------------------------------------
 
@@ -124,10 +133,9 @@ CREATE TABLE `transportadores` (
 --
 
 INSERT INTO `transportadores` (`codigo`, `nome`, `cpf_cnpj`, `telefone`, `cidade`) VALUES
-(1, 'Antônio', '12312312312', '4599991234', 'Cascavel'),
-(2, 'Jeferson Caminhões', '12332112309', '45988881234', 'Curitiba - PR'),
-(3, 'Camilo Transportes', '12345678909', '4598761223', 'Maringá - PR'),
-(4, 'Beraldo Caminhões', '12343312333', '45899991243', 'ponta grossa - PR');
+(1, 'Antônio', '12312312312', '4599991234', 'Cascavel - PR'),
+(2, 'Jeferson Caminhões', '12332111234', '45988881234', 'Curitiba - PR'),
+(3, 'Camilo Transportes', '1234567890', '4598761223', 'Maringá - PR');
 
 --
 -- Índices para tabelas despejadas
@@ -165,25 +173,25 @@ ALTER TABLE `transportadores`
 -- AUTO_INCREMENT de tabela `enderecos`
 --
 ALTER TABLE `enderecos`
-  MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `fretes`
 --
 ALTER TABLE `fretes`
-  MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `transportadores`
 --
 ALTER TABLE `transportadores`
-  MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
