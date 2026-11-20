@@ -106,7 +106,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <tr>
                     <td><?php echo $linha["nome"]; ?></td>
                     <td><?php echo $linha["peso"]; ?></td>
-                    <td><?php echo $linha["mididas"]; ?></td>
+                    <td><?php echo $linha["medidas"]; ?></td>
                     <td><?php echo $linha["quantidade"]; ?></td>
                     <td><a href="produtos.php?codigo=<?php echo $linha["codigo"]; ?>">Editar</a></td>
                 </tr>
